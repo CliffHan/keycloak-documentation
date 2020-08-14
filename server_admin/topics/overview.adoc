@@ -1,5 +1,10 @@
-== Overview
+== 总览（Overview）
 
+{project_name}是针对Web应用程序和RESTful Web服务的单一登录解决方案。{project_name}的目标是简化安全性，以便应用程序开发人员可以轻松保护已部署在组织中的应用程序和服务。 开箱即用地提供了开发人员通常必须为自己编写的安全功能，可以轻松地针对组织的个性化需求进行定制。 {project_name}提供用于登录，注册，管理和帐户管理的可自定义用户界面。您也可以使用{project_name}作为集成平台，将其挂接到现有的LDAP和Active Directory服务器中。 您还可以将身份验证委派给第三方身份提供商，例如Facebook和Google。
+
+.原文
+[%collapsible]
+====
 {project_name} is a single sign on solution for web apps and RESTful web services.  The goal of {project_name}
 is to make security simple so that it is easy for application developers to secure the apps and services they have deployed
 in their organization.  Security features that developers normally have to write for themselves are provided out of the box
@@ -7,3 +12,4 @@ and are easily tailorable to the individual requirements of your organization.  
 user interfaces for login, registration, administration, and account management.  You can also use {project_name} as an
 integration platform to hook it into existing LDAP and Active Directory servers.  You can also delegate authentication to third
 party identity providers like Facebook and Google.
+====

@@ -1,4 +1,10 @@
 
-== Trying out Keycloak
+== 试用Keycloak（Trying out Keycloak）
 
+本指南可帮助您在生产环境中使用{project_name}之前，对其进行评估。它包含以下指引：以独立模式安装{project_name}服务器，创建用于管理用户和应用程序的帐户和领域，保护{appserver_name}服务器应用程序。
+
+.原文
+[%collapsible]
+====
 This guide helps you practice using {project_name} to evaluate it before you use it in a production environment. It includes instructions for installing the {project_name} server in standalone mode, creating accounts and realms for managing users and applications, and securing a {appserver_name} server application.
+====

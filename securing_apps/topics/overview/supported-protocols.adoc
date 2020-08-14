@@ -1,9 +1,20 @@
 [[_supported_protocols]]
 
-=== Supported Protocols
+=== 支持的协议（Supported Protocols）
 
 ==== OpenID Connect
 
+link:https://openid.net/connect/[OpenID Connect]（OIDC）是身份验证协议，是link:https://tools.ietf.org/html/rfc6749[OAuth 2.0]的扩展。
+OAuth 2.0仅是用于构建授权协议的框架，并且主要是不完整的，而OIDC是成熟的身份验证和授权协议。 OIDC还大量使用了link:https://jwt.io[Json Web Token]（JWT）标准集。 这些标准定义了身份令牌JSON格式，并以紧凑且对网络友好的方式定义了对数据进行数字签名和加密的方式。
+
+使用OIDC时，实际上有两种类型的用例。第一类是应用程序要求{project_name}服务器为他们验证用户身份。用户成功登录后，应用程序将收到一个 _身份令牌_（identity token）和一个 _访问令牌_（access token）。_身份令牌_ 包含有关用户的信息，例如用户名，电子邮件和其他配置文件信息。 _访问令牌_ 包含访问信息（如用户角色映射），由领域（realm）进行数字签名，应用程序可使用访问信息来确定允许用户访问应用程序上的哪些资源。
+
+第二类用例是客户端希望获取远程服务的访问权限。在这种用例下，客户端将向{project_name}请求一个 _访问令牌_，它可以用来代表用户调用其他远程服务。{project_name}对用户进行身份验证，然后要求用户同意将访问权限授予请求它的客户端。然后，客户端会收到 _访问令牌_。 此 _访问令牌_
+由领域（realm）进行数字签名。 客户端可以使用此 _访问令牌_ 在远程服务上进行REST调用。REST服务提取 _访问令牌_，验证令牌的签名，然后根据令牌内的访问信息确定是否处理请求。
+
+.原文
+[%collapsible]
+====
 link:https://openid.net/connect/[OpenID Connect] (OIDC) is an authentication protocol that is an extension of link:https://tools.ietf.org/html/rfc6749[OAuth 2.0].
 While OAuth 2.0 is only a framework for building authorization protocols and is mainly incomplete, OIDC is a full-fledged authentication and authorization
 protocol.  OIDC also makes heavy use of the link:https://jwt.io[Json Web Token] (JWT) set of standards.  These standards define an
@@ -21,6 +32,7 @@ then asks the user for consent to grant access to the client requesting it.  The
 is digitally signed by the realm.  The client can make REST invocations on remote services using this _access token_.  The REST service
 extracts the _access token_, verifies the signature of the token, then decides based on access information within the token whether or not to process
 the request.
+====
 
 ==== SAML 2.0
 
@@ -41,6 +53,19 @@ to obtain a SAML assertion it can use to invoke on other remote services on beha
 
 ==== OpenID Connect vs. SAML
 
+在OpenID Connect和SAML之间进行选择不仅仅是选择较新的协议（OIDC），还是较旧但更成熟的协议（SAML）的问题。
+
+在大多数情况下，{project_name}建议使用OIDC。
+
+SAML比OIDC更加冗长。
+
+除了交换数据​​的冗长性之外，如果对两者规格进行比较，您会发现OIDC被设计为与Web一起工作，而SAML是被改造为可以在Web上工作。例如，OIDC还更适合HTML5/JavaScript应用程序，因为它在客户端比SAML更容易实现。由于令牌采用JSON格式，因此在JavaScript中更易于使用。您还将发现一些不错的特性，这些特性使在Web应用程序中实现安全性更加容易。例如，可以使用OIDC规范中的 link:https://openid.net/specs/openid-connect-session-1_0.html#ChangeNotification[iframe技巧]，以轻松确定用户是否仍在登录。
+
+SAML有其用途。随着OIDC规范的发展，您会发现它们实现了SAML多年来拥有的越来越多的功能。我们经常看到的是，人们选择SAML胜过OIDC，是因为人们认为SAML更成熟，也因为他们已经拥有使用它进行保护的现有应用程序。
+
+.原文
+[%collapsible]
+====
 Choosing between OpenID Connect and SAML is not just a matter of using a newer protocol (OIDC) instead of the older more mature protocol (SAML).
 
 In most cases {project_name} recommends using OIDC.
@@ -53,5 +78,4 @@ they are easier to consume by JavaScript. You will also find several nice featur
 make implementing security in your web applications easier. For example, check out the link:https://openid.net/specs/openid-connect-session-1_0.html#ChangeNotification[iframe trick] that the specification uses to easily determine if a user is still logged in or not.
 
 SAML has its uses though. As you see the OIDC specifications evolve you see they implement more and more features that SAML has had for years. What we often see is that people pick SAML over OIDC because of the perception that it is more mature and also because they already have existing applications that are secured with it.
-
-
+====

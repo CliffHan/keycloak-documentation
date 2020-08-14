@@ -1,5 +1,17 @@
 == Admin REST API
 
+{project_name} 带有功能齐全的Admin REST API，具有管理控制台提供的所有功能。
+
+要调用API，您需要获得具有适当权限的访问令牌。所需权限在
+{adminguide_link}[{adminguide_name}] 。
+
+可以通过使用 {project_name} 对您的应用程序进行身份验证来获得令牌； 请参见 {adapterguide_link}[{adapterguide_name}] 。您还可以使用直接访问授权来获取访问令牌。
+
+有关完整的文档，请参见 {apidocs_link}[{apidocs_name}] 。
+
+.原文
+[%collapsible]
+====
 {project_name} comes with a fully functional Admin REST API with all features provided by the Admin Console.
 
 To invoke the API you need to obtain an access token with the appropriate permissions. The required permissions are described in
@@ -9,6 +21,7 @@ A token can be obtained by enabling authenticating to your application with {pro
 {adapterguide_link}[{adapterguide_name}]. You can also use direct access grant to obtain an access token.
 
 For complete documentation see {apidocs_link}[{apidocs_name}].
+====
 
 === Examples using CURL
 

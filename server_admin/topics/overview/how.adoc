@@ -1,6 +1,11 @@
 
-=== How Does Security Work?
+=== 如何实现安全？（How Does Security Work?）
 
+{project_name}是您在网络上管理的单独服务器。应用程序被配置为指向该服务器并由该服务器保护。{project_name}使用开放协议标准（例如： link:https://openid.net/connect/[OpenID Connect]或 link:http://saml.xml.org/saml-specifications[SAML 2.0]）来保护您的应用程序。浏览器应用程序将用户的浏览器从应用程序重定向到 {project_name}身份验证服务器，并在其中输入其凭据。这很重要，因为用户与应用程序完全隔离，并且应用程序永远看不到用户的凭据。作为替代，{project_name}为应用程序提供了经过密码签名的身份令牌或断言。这些令牌可以包含身份信息，例如用户名，地址，电子邮件和其他配置文件数据。他们还可以保存许可数据，以便应用程序可以做出授权决策。这些令牌还可以用于对基于REST的服务进行安全调用。
+
+.原文
+[%collapsible]
+====
 {project_name} is a separate server that you manage on your network.  Applications are configured to point to and
 be secured by this server.  {project_name} uses open protocol standards like link:https://openid.net/connect/[OpenID Connect]
 or link:http://saml.xml.org/saml-specifications[SAML 2.0] to secure
@@ -10,3 +15,4 @@ applications never see a user's credentials.  Applications instead are given an 
 signed.  These tokens can have identity information like username, address, email, and other profile data.  They can also
 hold permission data so that applications can make authorization decisions.  These tokens can also be used to make secure
 invocations on REST-based services.
+====

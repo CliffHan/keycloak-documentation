@@ -1,8 +1,11 @@
-=== What are Client Adapters?
+=== 什么是客户端适配器？（What are Client Adapters?）
 
+{project_name}客户端适配器是一些库，通过这些库可以轻松保护{project_name}应用程序和服务的安全。我们称它们为适配器而不是库，因为它们提供了与基础平台和框架的紧密集成。这使得我们的适配器易于使用，并且比库通常需要的模板代码更少。
+
+.原文
+[%collapsible]
+====
 {project_name} client adapters are libraries that make it very easy to secure applications and services with {project_name}. We call them
 adapters rather than libraries as they provide a tight integration to the underlying platform and framework. This makes our adapters easy to use and they
 require less boilerplate code than what is typically required by a library.
-
-
-
+====

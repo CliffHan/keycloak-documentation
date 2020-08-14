@@ -1,5 +1,5 @@
 
-=== Core Concepts and Terms
+=== 核心概念和术语（Core Concepts and Terms）
 
 There are some key concepts and terms you should be aware of before attempting to use {project_name} to secure your web applications
 and REST services.

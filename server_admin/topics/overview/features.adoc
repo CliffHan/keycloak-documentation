@@ -1,6 +1,35 @@
 
-=== Features
+=== 特性（Features）
 
+* 浏览器应用程序的单点登录和单点登出
+* 支持OpenID Connect
+* 支持OAuth 2.0
+* 支持SAML
+* 身份代理 - 通过外部OpenID Connect或SAML身份提供程序进行身份验证
+* 社交登录 - 启用与Google，GitHub，Facebook，Twitter和其他社交网络的登录
+* 用户联合 - 同步来自LDAP和Active Directory服务器的用户
+* Kerberos桥 - 自动验证登录到Kerberos服务器的用户
+* 管理控制台，用于集中管理用户，角色，角色映射，客户端和配置。
+* 帐户管理控制台，允许用户集中管理其帐户
+* 主题支持 - 自定义所有面向用户的页面以与您的应用程序和品牌集成
+* 两步身份验证 - 通过Google Authenticator或FreeOTP支持TOTP/HOTP
+* 登录流程 - 可选的用户自注册，恢复密码，验证电子邮件，要求密码更新等
+* 会话管理 - 管理员和用户本身可以查看和管理用户会话
+* 令牌映射器 - 将用户属性，角色等以您希望的方式映射到令牌和语句
+* 停止使用各领域/应用/用户时，遵循“不早于”策略
+* CORS支持 - 客户端适配器具有对CORS的内置支持
+ifeval::[{project_community}==true]
+* 服务提供商接口（SPI） - 有许多SPI可用于自定义服务器的各个方面，如身份验证流程，用户联合身份验证提供者，协议映射器等等
+* 各类客户端适配器，支持JavaScript应用程序，WildFly，JBoss EAP，Fuse，Tomcat，Jetty，Spring等
+endif::[]
+ifeval::[{project_product}==true]
+* 各类客户端适配器，支持JavaScript应用程序，JBoss EAP，Fuse等
+endif::[]
+* 支持任何平台/语言实现的OpenID Connect依赖方或SAML 2.0服务提供商的函数库
+
+.原文
+[%collapsible]
+====
 * Single-Sign On and Single-Sign Out for browser applications.
 * OpenID Connect support.
 * OAuth 2.0 support.
@@ -27,3 +56,4 @@ ifeval::[{project_product}==true]
 * Client adapters for JavaScript applications, JBoss EAP, Fuse, etc.
 endif::[]
 * Supports any platform/language that has an OpenID Connect Relying Party library or SAML 2.0 Service Provider library.
+====

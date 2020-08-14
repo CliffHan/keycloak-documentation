@@ -1,10 +1,21 @@
 
 [id="realms-users"]
-=== Realms and users
+=== 领域和用户（Realms and users）
+
+登录管理控制台时，您将在一个领域中工作，该领域是您管理对象的空间。存在两种类型的领域：
+
+* `主领域` - 此领域是在您首次启动{project_name}时为您创建的。它包含您在首次登录时创建的管理员帐户。您使用此领域只是用来创建其他领域。
+
+* `其他领域` - 这些领域是由管理员在主领域中创建的。在这些领域中，管理员创建用户和应用程序。这些应用程序归用户所有。
+
+.原文
+[%collapsible]
+====
 When you log in to the admin console, you work in a realm, which is a space where you manage objects. Two types of realms exist:
 
 * `Master realm` - This realm was created for you when you first started {project_name}. It contains the admin account you created at the first login. You use this realm only to create other realms.
 
 * `Other realms` - These realms are created by the admin in the master realm. In these realms, administrators create users and applications. The applications are owned by the users.
+====
 
 image:images/master_realm.png[]
